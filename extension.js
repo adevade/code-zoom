@@ -1,19 +1,28 @@
 const vscode = require('vscode');
 
 function activate(context) {
-	let config = vscode.workspace.getConfiguration('editor');
+	let editorConfig = vscode.workspace.getConfiguration('editor');
 
 	let makeDefault = vscode.commands.registerCommand('code-zoom.default', () => {
-		config.update('fontSize');
-		config.update('lineHeight');
+		editorConfig.update('fontSize');
+		editorConfig.update('lineHeight');
 	});
 
 	let makeSmall = vscode.commands.registerCommand('code-zoom.small', () => {
-		config.update('fontSize', 12);
-		config.update('lineHeight', 16);
+		let codeZoomConfig = vscode.workspace.getConfiguration('code-zoom');
+
+		editorConfig.update('fontSize', codeZoomConfig.get('small.fontSize', 12));
+		editorConfig.update('lineHeight', codeZoomConfig.get('small.lineHeight', 1.25));
 	});
 
-	context.subscriptions.push(makeDefault, makeSmall);
+	let makeBig = vscode.commands.registerCommand('code-zoom.big', () => {
+		let codeZoomConfig = vscode.workspace.getConfiguration('code-zoom');
+
+		editorConfig.update('fontSize', codeZoomConfig.get('big.fontSize', 32));
+		editorConfig.update('lineHeight', codeZoomConfig.get('big.lineHeight', 4));
+	});
+
+	context.subscriptions.push(makeDefault, makeSmall, makeBig);
 }
 
 function deactivate() {

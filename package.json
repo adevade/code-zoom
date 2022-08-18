@@ -13,7 +13,8 @@
 	],
 	"activationEvents": [
 		"onCommand:code-zoom.default",
-		"onCommand:code-zoom.small"
+		"onCommand:code-zoom.small",
+		"onCommand:code-zoom.big"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -25,8 +26,39 @@
 			{
 				"command": "code-zoom.small",
 				"title": "Code Zoom: Small"
+			},
+			{
+				"command": "code-zoom.big",
+				"title": "Code Zoom: Big"
 			}
-		]
+		],
+		"configuration": {
+			"title": "Code Zoom",
+			"properties": {
+				"code-zoom.small.fontSize": {
+					"type": "integer",
+					"default": 12,
+					"minimum": 6
+				},
+				"code-zoom.small.lineHeight": {
+					"type": "number",
+					"default": 1.25,
+					"minimum": 1,
+					"maximum": 7
+				},
+				"code-zoom.big.fontSize": {
+					"type": "integer",
+					"default": 32,
+					"minimum": 6
+				},
+				"code-zoom.big.lineHeight": {
+					"type": "number",
+					"default": 4,
+					"minimum": 1,
+					"maximum": 7
+				}
+			}
+		}
 	},
 	"scripts": {},
 	"devDependencies": {
