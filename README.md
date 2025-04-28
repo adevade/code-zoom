@@ -48,6 +48,12 @@ Defines the big line height with a multiplier of the big font size. Defaults to 
 
 ## Release Notes
 
+### 0.3.0
+
+- Bump minimum VS Code version to `^1.75`.
+- Update and clean up `package.json`.
+- Add extension icon.
+
 ### 0.2.0
 
 - Added command for making code bigger.
