@@ -5,17 +5,19 @@
 	"version": "0.2.0",
 	"publisher": "adevade",
 	"repository": "https://github.com/adevade/code-zoom",
+	"sponsor": {
+		"url": "https://github.com/sponsors/adevade"
+	},
 	"engines": {
 		"vscode": "^1.75.0"
 	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:code-zoom.default",
-		"onCommand:code-zoom.small",
-		"onCommand:code-zoom.big"
-	],
+	"categories": ["Other"],
+	"license": "MIT",
+	"icon": "./img/icon.png",
+	"galleryBanner": {
+		"color": "#78cdc5",
+		"theme": "dark"
+	},
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
@@ -60,7 +62,6 @@
 			}
 		}
 	},
-	"scripts": {},
 	"devDependencies": {
 		"@types/vscode": "^1.75.0"
 	}
