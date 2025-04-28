@@ -2,7 +2,7 @@
 	"name": "code-zoom",
 	"displayName": "Code Zoom",
 	"description": "Make code small, make code big. Easy as that.",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"publisher": "adevade",
 	"repository": "https://github.com/adevade/code-zoom",
 	"sponsor": {
